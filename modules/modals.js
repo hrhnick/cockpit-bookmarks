@@ -175,7 +175,7 @@
         
         // Update title and button text
         const title = utils().getElement('bookmark-modal-title');
-        const submitBtn = document.querySelector('#bookmark-form button[type="submit"]');
+        const submitBtn = document.querySelector('button[type="submit"][form="bookmark-form"]');
         
         if (title && submitBtn) {
             if (data && data.mode === 'edit') {
