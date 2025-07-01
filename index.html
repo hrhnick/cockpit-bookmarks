@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bookmarks</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Loading Spinner -->
+  <div id="loading-overlay">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Action Banner -->
+  <div id="action-banner" style="display: none;"></div>
+
+  <!-- Main Page Content -->
+  <main class="pf-v6-c-page__main">
+    <!-- Page Header -->
+    <header class="pf-v6-c-page__header">
+      <h2>Bookmarks</h2>
+      <p class="page-description">Manage your server bookmarks and quick links</p>
+    </header>
+
+    <!-- Main Content -->
+    <div id="main-content" class="content-box">
+      <!-- Bookmarks Toolbar -->
+      <div class="table-toolbar">
+        <div class="search-section">
+          <label for="bookmarks-search" class="sr-only">Filter bookmarks</label>
+          <input type="search" id="bookmarks-search" class="search-input" placeholder="Filter bookmarks..." autocomplete="off">
+        </div>
+        <div class="toolbar-actions">
+          <button type="button" class="pf-v6-c-button pf-v6-c-button--primary" id="add-bookmark-btn">
+            Add bookmark
+          </button>
+        </div>
+      </div>
+      
+      <!-- Bookmarks Table -->
+      <div class="table-container">
+        <table class="data-table" id="bookmarks-table">
+          <thead>
+            <tr>
+              <th class="sortable" data-sort="name" scope="col">
+                <button type="button" class="sort-button" aria-label="Sort by name">
+                  <span>Name</span>
+                  <span class="sort-indicator" aria-hidden="true"></span>
+                </button>
+              </th>
+              <th class="sortable" data-sort="url" scope="col">
+                <button type="button" class="sort-button" aria-label="Sort by URL">
+                  <span>URL</span>
+                  <span class="sort-indicator" aria-hidden="true"></span>
+                </button>
+              </th>
+              <th class="sortable" data-sort="description" scope="col">
+                <button type="button" class="sort-button" aria-label="Sort by description">
+                  <span>Description</span>
+                  <span class="sort-indicator" aria-hidden="true"></span>
+                </button>
+              </th>
+              <th class="actions-column" scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="bookmarks-tbody">
+            <tr class="loading-row">
+              <td colspan="4" class="loading-cell">Loading bookmarks...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script src="../base1/cockpit.js"></script>
+  <!-- Core modules -->
+  <script src="modules/utils.js"></script>
+  <script src="modules/table.js"></script>
+  <script src="modules/modals.js"></script>
+  <script src="modules/ui.js"></script>
+  <script src="modules/bookmarks.js"></script>
+  <!-- Main app coordinator -->
+  <script src="app.js"></script>
+</body>
+</html>
